@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Troco</title>
+    <style>
+        .Botão{
+            width: 200px;
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Calculando o Troco</h1>
+    <input class="Botão" type="button" value="Comprar produto" onclick="Comprar()">
+
+    <script>
+        function Comprar(){
+            let produto = window.prompt('Que produto você está comprando?')
+            let p = Number.parseInt(window.prompt(`Quanto custa o ${produto} que você está comprando?`))
+            let r = Number.parseInt(window.prompt(`Qual foi o valor que você deu para pagar o ${produto}?`))
+            let s = r - p
+            window.alert(`Você comprou um ${produto} que custou ${p.toLocaleString('pt-BR', {style:'currency', currency:'BRL'})}.\n Deu ${r.toLocaleString('pt-BR',{style:'currency',currency:'BRL'})} em dinheiro e vai receber ${s.toLocaleString('pt-BR',{style:'currency',currency:'BRL'})} de troco. \n Volte Sempre!`)
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fórmula de Bhaskara</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body{
+    background-image: linear-gradient(to right, #3756f3de , #94C6F2);
+}
+main{
+    background-image: linear-gradient(110deg, #3756f3de 5%, #94C6F2);
+    width: 500px;
+    margin: auto;
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 10px 10px 15px #010326;
+}
+input{
+    text-align: center;
+    border-radius: 5px;
+    margin: 5px;
+}
+
+    </style>
+</head>
+<body>
+    <main>
+        <h1>Resolvendo Bhaskara</h1>
+        <input type="number" name="vala" id="vala" placeholder="Insira o valor de 'a'"><br>
+        <input type="number" name="valb" id="valb" placeholder="Insira o valor de 'b'"><br>
+        <input type="number" name="valc" id="valc" placeholder="Insira o valor de 'c'"><br>
+        <input type="button" value="Calcular" onclick="Calcular()">
+        <div id="res">Considerando uma equação no formato <strong>ax<sup>2</sup>+bx+c=0</strong>.<br>
+        Aperte o botão acima para calcular o valor de &Delta;.</div>
+    </main>
+
+    <script>
+        function Calcular(){
+        let a = document.getElementById('vala')
+        let b = document.getElementById('valb')
+        let c = document.getElementById('valc')
+        let res = document.getElementById('res')
+        let na = Number(a.value)
+        let nb = Number(b.value)
+        let nc = Number(c.value)
+        let r = nb * nb - 4 * na * nc
+        a.value = ''
+        b.value = ''
+        c.value = ''
+        a.focus()
+        res.innerHTML = `A equação atual é ${na}x<sup>2</sup> + ${nb}x + ${nc} = 0 <br>
+        O valor é &Delta; = ${r}`
+        }
+
+    </script>
+</body>
+</html>

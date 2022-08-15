@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relógio</title>
+    <style>
+        body{
+            font: normal 25pt bold;
+            text-align: center;
+            background-color: rgb(255, 126, 126);
+        }
+        header{
+            border-style:dashed;
+            font-size: 30pt;
+        }
+        section{
+            font-size: 25pt;
+        }
+        footer{
+            font-size: 15pt;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1><div id="saudacao"></div></h1>
+        <section><div id="relogio"></div><br></section>
+    </header>
+
+    <footer>&copy;JoSilva</footer>
+    <script>
+        var agora = new Date()
+        var hora = agora.getHours()
+        var minuto = agora.getMinutes()
+        var dia = agora.getDate()
+        var ano = agora.getFullYear()
+        var mes = agora.getMonth()
+        switch(mes){
+            case 0:
+                var mes = 'Janeiro'
+                break
+            case 1:
+                var mes = 'Fevereiro'
+                break
+            case 2:
+                var mes = 'Março'
+                break
+            case 3:
+                var mes = 'Abril'
+                break
+            case 4:
+                var mes = 'Maio'
+                break
+            case 5:
+                var mes = 'Junho'
+                break
+            case 6:
+                var mes = 'Julho'
+                break
+            case 7:
+                var mes = 'Agosto'
+                break
+            case 8:
+                var mes = 'Setembro'
+                break
+            case 9:
+                var mes = 'Outubro'
+                break
+            case 10:
+                var mes = 'Novembro'
+                break
+            case 11:
+                var mes = 'Dezembro'
+                break
+        }
+        relogio.innerHTML = `Hoje é dia ${dia} de ${mes} de ${ano}.<br> 
+        Agora são exatamente ${hora} horas e ${minuto} minutos. `
+        if(hora < 5){
+        saudacao.innerHTML = `Boa Madrugada!`
+        }else{
+            if(hora < 12){
+                saudacao.innerHTML = `Bom dia!`
+            }else{
+                if(hora < 18){
+                    saudacao.innerHTML = `Boa tarde!`
+                }else{
+                    saudacao.innerHTML = `Boa noite!`
+                }
+            }
+        }
+    </script>
+</body>
+</html>

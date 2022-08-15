@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introdução ao DOM</title>
+    <style>
+        body{
+            background-color: ;
+            color: antiquewhite;
+            font: normal 20pt bolder;
+            text-align: center;
+        }
+        p#obs{
+            color: purple;
+        }
+    </style>
+</head>
+<body>
+    <h1>Introdução ao DOM!</h1>
+    <p>Aprendendo a usar <strong>DOM</strong> em JavaScript.</p>
+    <p>Aqui vai o resultado:</p>
+    <div id="msg">Clique Aqui</div><br/>
+    <p id="obs"> Isso é apenas uma observaçao sobre identificadores na parte de style do css.
+    </p>
+    <script>
+        var p1 = document.getElementsByTagName('p')[0]
+        var corpo = document.body
+        document.write('Está escrito, "' + p1.innerText + '", no primeiro parágrafo.<br/>')
+        p1.style.color='red'
+        corpo.style.background='darkslategrey'
+        var d = document.getElementById('msg')
+        d.style.background='purple'
+
+    </script>
+    
+</body>
+</html>

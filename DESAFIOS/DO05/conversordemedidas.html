@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de Medidas</title>
+    <style>
+        body{
+            text-align: center;
+            background-color: black;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 15pt;
+            
+        }
+        .botao{
+            width:105px;
+            height:50px;
+            border-radius: 15px;
+            font-size: large;
+        }
+        .campo{
+            font-size: large;
+            width: 178px;
+            height:45px;
+            border-radius: 15px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Conversor de Medidas</h1>
+    <input class="campo" type="number" name="txtnum" id="txtnum" placeholder="Distância em metros">
+    <input class="botao" type="button" value="Converter" onclick="Converter()">
+    <div class="container" id="res">
+    </div>
+    
+
+    <script>
+        function Converter(){
+            let n = document.getElementById('txtnum')
+            let m = Number(n.value)
+            let res = document.getElementById('res')
+            let km = m/1000
+            let hm = m/100
+            let dam = m/10
+            let dm = m*10
+            let cm = m*100
+            let mm = m*1000
+            n.value = ''
+            n.focus()
+            res.innerHTML = `<h2>A distância de ${m.toLocaleString('pt-BR')} metros, corresponde a...</h2>\n
+        <p>${km.toLocaleString('pt-BR')} quilômetros (Km)</p>
+        <p>${hm.toLocaleString('pt-BR')} hectômetros (Hm)</p>
+        <p>${dam.toLocaleString('pt-BR')} decâmetros (Dam)</p>
+        <p>${dm.toLocaleString('pt-BR')} decímetros (dm)</p>
+        <p>${cm.toLocaleString('pt-BR')} centímetros (cm)</p>
+        <p>${mm.toLocaleString('pt-BR')} milímetros (mm)</p>`
+            }
+    </script>
+</body>
+</html>

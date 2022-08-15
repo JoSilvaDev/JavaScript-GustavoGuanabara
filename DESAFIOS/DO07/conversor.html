@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor R$ -> US$</title>
+    <style>
+        body{
+            margin-left: 25px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Conversor Real &rarr; Dólar</h1>
+    <input type="number" name="valor" id="valor" placeholder="Digite o valor em Real">
+    <input type="button" value="Converter" onclick="Converter()">
+    <div id="res"></div>
+
+    <script>
+        let dolar = window.prompt('Qual é a cotação atual do Dólar?')
+        function dol(){
+            return dolar;
+        }
+        
+        function Converter(){
+            let val = document.getElementById('valor')
+            let res = document.getElementById('res')
+            let v = Number(val.value)
+            let r = v / dol()
+            val.value = ''
+            val.focus()
+            res.innerHTML = `<p>O valor ${v.toLocaleString('pt-br',{style:'currency', currency:'BRL'})} corresponde a ${r.toLocaleString('pt-br',{style:'currency',currency:'USD'})}</p>`
+        }
+        
+    </script>
+</body>
+</html>

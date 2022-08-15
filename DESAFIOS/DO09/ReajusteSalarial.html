@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reajuste Salárial</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <h1>
+            Reajuste Salarial
+        </h1>
+        <input type="text" name="txtnome" id="txtnome" placeholder="Nome do Funcionário"><br>
+        <input type="number" name="txtsal" id="txtsal" placeholder="Digite o Salário"><br>
+        <input type="number" name="txtporc" id="txtporc" placeholder="Porc. de Reajuste"><br>
+        <input type="button" value="Reajustar Salário" onclick="Reajustar()">
+        <div id="res">
+        </div>
+    </main>
+
+    <script>
+        function Reajustar(){
+            let nome = document.getElementById('txtnome')
+            let sal = document.getElementById('txtsal')
+            let porc = document.getElementById('txtporc')
+            let res = document.getElementById('res')
+            
+            let n = String(nome.value)
+            let s = Number(sal.value)
+            let p = Number(porc.value)
+            let r = s + s / 100 * p
+            let a = r - s
+            res.innerHTML = `<h1>${n} recebeu um aumento salarial!</h1>
+            <p>O salário era de ${s.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' }) }.</p>
+            <p>Com um aumento de ${p.toLocaleString('pt-br')}%, o salário vai aumentar ${a.toLocaleString('pt-br',{style: 'currency', currency:'BRL'})} no próximo mês.</p>
+            <p>O novo salário de ${n} vai ser de ${r.toLocaleString('pt-br',{style:'currency',currency:'BRL'})}.</p>`
+        }
+    </script>
+</body>
+</html>

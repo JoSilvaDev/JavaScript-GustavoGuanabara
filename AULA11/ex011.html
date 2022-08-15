@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de identificação</title>
+    <style>
+        body{
+            font: normal 20pt bold;
+            text-align: center;
+            background-color: rgb(228, 210, 184);
+        }
+    </style>
+</head>
+<body>
+    <h1>Sistema de Nacionalidade</h1>
+    <hr>
+    Digite aqui o seu país de origem:<input type="text" name="txtn" id="txtn">
+    <input type="button" value="Verificar" onclick="verificar()">
+    <p><div id="res">Verificando...</div></p>
+    <script>
+        function verificar(){
+            var pais = document.getElementById('txtn')
+            var res = document.getElementById('res')
+            var nac = (pais.value)
+            res.innerHTML = `<p>O seu país é o ${nac}.</p>`
+            if (nac == 'Brasil'){
+                res.innerHTML += `Você é Brasileiro.`
+            } else{
+                if(nac == 'EUA'){
+                    res.innerHTML += `Você é norte americano.`
+                } else{
+                res.innerHTML += `Você é extrangeiro.`
+            }
+                }
+            }
+    </script>
+</body>
+</html>

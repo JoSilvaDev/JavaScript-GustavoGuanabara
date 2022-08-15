@@ -1,0 +1,16 @@
+body{
+    background-image: linear-gradient(to right, #3756f3de , #94C6F2);
+}
+main{
+    background-image: linear-gradient(110deg, #3756f3de 5%, #94C6F2);
+    width: 500px;
+    margin: auto;
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 10px 10px 15px #010326;
+}
+input{
+    border-radius: 5px;
+    margin: 5px;
+}

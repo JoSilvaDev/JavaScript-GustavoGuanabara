@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificador de idade</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Verificador de Idade</h1>
+    </header>
+    <section>
+        <div>
+        <p>Ano de Nascimento:
+            <input type="number" name="txtnasc" id="txtnasc" min="0"></p><!--input a ser respondida com ano de nascimento, com o minimo valor -->
+        <p>Sexo: 
+            <input type="radio" name="radsex" id="masc" checked> <!--opcao 0 de marcaçao-->
+            <label for="masc">Masculino</label><!--identificaçao semantica de formulario-->
+            <input type="radio" name="radsex" id="fem"><!--opcao 1 de marcaçao-->
+            <label for="fem">Feminino</label></p>
+            <p><input type="button" value="Verificar" onclick="verificar()"></p><!--botao que dispara a funçao-->
+        </div>
+        <div id="res"><!--div que vai receber os resultados-->
+            Preencha os dados acima para ter o resultado!
+        </div><!--div que vai receber as imagens-->
+        <div id="foto"><img id="imagem" src="" alt=""></div>
+    </section>
+    <footer>
+        &copy;JoSilva
+    </footer>
+    <script src="Script.js"></script>
+</body>
+</html>

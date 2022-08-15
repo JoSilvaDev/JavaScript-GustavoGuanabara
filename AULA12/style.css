@@ -1,0 +1,14 @@
+body{
+    font: normal 25pt bold;
+    text-align: center;
+    background-color: rgb(255, 126, 126);
+}
+header{
+    border-style:dashed
+}
+h2{
+    font-size: 25pt;
+}
+footer{
+    font-size: 15pt;
+}

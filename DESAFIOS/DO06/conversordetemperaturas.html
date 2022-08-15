@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de Temperaturas</title>
+    <style>
+.box{
+    width: 250px;
+}
+    </style>
+</head>
+<body>
+    <h1>Conversor de Temperaturas</h1>
+    <input class="box" type="number" name="celsius" id="celsius" placeholder="Digite uma temperatura em ℃ (Celsius)">
+    <input type="button" value="Converter" onclick="Converter()">
+    <div id="res">
+        <p>Clique no botão acima para iniciar.</p>
+    </div>
+
+    <script>
+        function Converter(){
+            let c = document.getElementById('celsius')
+            let cnum = Number(c.value)
+            let res = document.getElementById('res')
+            let k = cnum + 273.15
+            let f = (cnum * 9/5) + 32 
+            c.value = ''
+            c.focus()
+            res.innerHTML = `<H2>A temperatura de ${cnum.toLocaleString('pt-BR')}℃, corresponde a...</H2>
+            <p>${k.toLocaleString('pt-BR')}ºK (Kelvin)</p>
+            <p>${f.toLocaleString('pt-BR')}ºF (Fahrenheit)</p>`
+        }
+        
+    </script>
+</body>
+</html>

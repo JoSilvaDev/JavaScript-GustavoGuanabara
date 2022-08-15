@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ano Bissexto</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        #m1{
+            background-color: rgb(155, 226, 155);
+            color: green;
+        }
+        #m2{
+            background-color: rgb(226, 94, 94);
+            color: rgb(139, 6, 6);
+        }
+    
+    </style>
+</head>
+<body>
+    <main>
+        <h1>Ano Bissexto</h1>
+        <input type="number" name="txtano" id="txtano" placeholder="Digite o Ano aqui">
+        <input type="button" value="Verificar" onclick="Verificar()">
+        <div id="res">
+            <p>Informe um ano para saber se ele é  bissexto</p>
+        </div>
+
+        <script>
+            function Verificar(){
+                let ano = document.getElementById('txtano')
+                let res = document.getElementById('res')
+
+                if(ano.value.length != 4){
+                    alert('digite um ano válido')
+                }else {
+                    let nano = Number(ano.value)
+                     res.innerHTML = `<h2>Analisando o ano de ${nano}...</h2>`
+                    if(nano % 4 == 0){
+                       
+                    res.innerHTML += `O ano de ${nano} <mark id = m1>É BISSEXTO</mark>\u{2705}`
+                    }else{
+                        res.innerHTML += `O ano de ${nano} <mark id = m2> NÃO É BISSEXTO</mark>\u{274C}`
+                    }
+                }
+                ano.value=''
+                ano.focus()
+            }
+        </script>
+    </main>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preço Mudou</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <h1>Preço mudou</h1>
+        Qual era o preço anterior do produto: <br> <input type="number" name="preçoanterior" id="preçoanterior"><br>
+        Qual é o preço atual do produto: <br> <input type="number" name="preçoatual" id="preçoatual"><br>
+        <input type="button" value="Verificar" onclick="Verificar()">
+        <div id="res">Clique no botão acima para analisar a mudança de preço.</div>
+    </main>
+
+    <script>
+function Verificar(){
+    let preçoa = document.getElementById('preçoanterior')
+    let preçon = document.getElementById('preçoatual')
+    let res = document.getElementById('res')
+    let pa = Number(preçoa.value)
+    let pn = Number(preçon.value)
+    res.innerHTML = `<h2>Analisando os valores informados</h2>`
+    if(pn > pa){
+        let ps = pn - pa
+        let porca = (pn / pa - 1) * 100
+        res.innerHTML += `O produto custava ${pa.toLocaleString('pt-br',{style:'currency', currency:'BRL'})} e agora custa ${pn.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' }) }. <br>
+        Hoje o produto está mais caro. <br>
+        O preço subiu ${ps.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' }) } em relação ao peço anterior. <br>
+        Uma variação de ${porca.toLocaleString('pt-br')}% pra cima.`
+    }else{
+        let pc = pa - pn 
+        let porca = (pa / pn - 1) * 100
+        res.innerHTML += `O produto custava ${pa.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' }) } e agora custa ${pn.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' }) }. <br>
+        Hoje o produto está mais barato. <br>
+        O preço caiu ${pc.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' }) } em relação ao preço anterior. <br>
+        Uma variação de ${porca.toLocaleString('pt-br')}% pra baixo.`
+    }
+}
+    </script>
+</body>
+</html>
